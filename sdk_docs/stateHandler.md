@@ -265,7 +265,7 @@ val ioTSensorLog = handler.getSensorLog(devId, elm, attr,  cp)
 - **cp**: ```Int``` current part: vị trí đoạn log hiện tại đang lấy
 
 **Giá trị trả về**
-# IoTLogSensor
+IoTLogSensor
 
 | STT | Trường | Kiểu | Giải thích |
 |-----|---------|------|-------------|
