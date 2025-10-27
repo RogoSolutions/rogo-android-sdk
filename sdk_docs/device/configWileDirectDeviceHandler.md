@@ -88,6 +88,36 @@ Hàm scanWifi cần được gọi sau callback của hàm connectAndIdentifyDev
 - **seconds**: ```Int``` thời gian để thiết bị quét các WiFi đang khả dụng xung quanh.
 - **callback**: ```RequestCallback<Collection<IoTWifiInfo>>
 
+**Giải thích class `IoTWifiInfo` **
+
+| STT | Trường     | Kiểu   | Chú thích             |
+|-----|-------------|--------|------------------------|
+| 1   | `ssid`      | String | Tên của WiFi          |
+| 2   | `remember`  | int    |                       |
+| 3   | `authType`  | int    | Kiểu bảo mật của WiFi |
+| 4   | `rssi`      | int    | Rssi của WiFi         |
+| 5   | `freq`      | int    |                       |
+
+**Giải thích về `authType`**
+
+Các giá trị của `authType` được giải thích ở class `IoTWifiAuthType`.  
+Dưới đây là các kiểu bảo mật của WiFi:
+
+| STT | Loại bảo mật       | Giá trị tương ứng | Chú thích |
+|-----|---------------------|------------------:|------------|
+| 1   | OPEN                | 0                |            |
+| 2   | WEP                 | 1                |            |
+| 3   | WPA_PSK             | 2                |            |
+| 4   | WPA2_PSK            | 3                |            |
+| 5   | WPA_WPA2_PSK        | 4                |            |
+| 6   | WPA2_ENTERPRISE     | 5                |            |
+| 7   | WPA3_PSK            | 6                |            |
+| 8   | WPA2_WPA3_PSK       | 7                |            |
+| 9   | WAPI_PSK            | 8                |            |
+| 10  | MAX                 | 9                |            |
+
+
+
 ### 2.5. Thiết lập WiFi cho thiết bị
 ```kotlin
 handler.requestConnectWifiNetwork(infNo, ssid, pwd, isConfirm, callback)
@@ -100,6 +130,8 @@ Sử dụng hàm này sau khi đã quét được WiFi đang khả dụng muốn
 - **pwd**: ```String``` password  của Wifi
 - **isConfirm**: ```Boolean``` : lựa chọn có xác thực thông tin wifi hay không
 - **callback**: ```SuccessRequestCallback```
+
+
 
 ### 2.6. Hoàn tất thiết lập
 ```kotlin
