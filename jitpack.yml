@@ -1,0 +1,13 @@
+jdk:
+  - openjdk17
+
+install:
+  - mvn install:install-file
+      -Dfile=raio_sdk.aar
+      -DgroupId=com.github.RogoSolutions
+      -DartifactId=raio_sdk
+      -Dversion=$VERSION
+      -Dpackaging=aar
+      -DgeneratePom=true
+      -DcreateChecksum=true
+      -DlocalRepositoryPath=$HOME/.m2/repository
