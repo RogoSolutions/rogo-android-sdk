@@ -5,7 +5,7 @@ install:
   - mvn install:install-file
       -Dfile=raio_sdk.aar
       -DgroupId=com.github.RogoSolutions
-      -DartifactId=raio_sdk
+      -DartifactId=rogo-android-sdk
       -Dversion=$VERSION
       -Dpackaging=aar
       -DgeneratePom=true
